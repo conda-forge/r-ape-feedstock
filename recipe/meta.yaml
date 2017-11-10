@@ -1,4 +1,4 @@
-{% set version = '4.1' %}
+{% set version = '5.0' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ape_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ape/ape_{{ version }}.tar.gz
-  sha256: 935af5ddadcba832d3f9cc032a80fc1a2e627a7ed54ef5f3773f87e06374a924
+  sha256: c32ed22e350b3d7c7ef3de9334155ab1f3086922b5ec9a1643897cae7abda960
 
 build:
   number: 0
@@ -25,6 +25,7 @@ build:
 requirements:
   build:
     - r-base
+    - r-rcpp
     - r-lattice
     - r-nlme
     - posix                # [win]
@@ -33,6 +34,7 @@ requirements:
 
   run:
     - r-base
+    - r-rcpp
     - r-lattice
     - r-nlme
     - libgcc  # [not win]
@@ -59,8 +61,12 @@ about:
     external applications (PhyML, Clustal, T-Coffee, Muscle) whose results are returned
     into R.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
