@@ -14,14 +14,16 @@ Summary: Functions for reading, writing, plotting, and manipulating phylogenetic
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-ape-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-ape-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-ape-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-ape-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-ape-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-ape-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-ape-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-ape-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-ape-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-ape-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-ape-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-ape-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-ape/badges/version.svg)](https://anaconda.org/conda-forge/r-ape)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-ape/badges/downloads.svg)](https://anaconda.org/conda-forge/r-ape)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--ape-green.svg)](https://anaconda.org/conda-forge/r-ape) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-ape.svg)](https://anaconda.org/conda-forge/r-ape) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-ape.svg)](https://anaconda.org/conda-forge/r-ape) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-ape.svg)](https://anaconda.org/conda-forge/r-ape) |
 
 Installing r-ape
 ================
