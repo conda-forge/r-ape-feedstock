@@ -1,5 +1,4 @@
-{% set version = "5.1" %}
-
+{% set version = '5.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,41 +9,43 @@ package:
 source:
   fn: ape_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ape_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ape/ape_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/ape_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ape/ape_{{ version }}.tar.gz
   sha256: b7d5dca66881638227a40aa59533904aa5efe0f4b867851b248e8f948a01a26e
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-rcpp
+    - r-rcpp >=0.12.0
     - r-lattice
     - r-nlme
-
   run:
     - r-base
-    - r-rcpp
+    - {{native}}gcc-libs         # [win]
+    - r-rcpp >=0.12.0
     - r-lattice
     - r-nlme
 
 test:
   commands:
-    - $R -e "library('ape')"  # [not win]
+    - $R -e "library('ape')"           # [not win]
     - "\"%R%\" -e \"library('ape')\""  # [win]
 
 about:
@@ -73,3 +74,5 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
