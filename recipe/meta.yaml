@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,6 +31,8 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
+    - libblas
+    - liblapack
     - r-base
     - r-rcpp >=0.12.0
     - r-lattice
@@ -49,7 +51,7 @@ test:
 
 about:
   home: http://ape-package.ird.fr/
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Functions for reading, writing, plotting, and manipulating phylogenetic trees, analyses
     of comparative data in a phylogenetic framework, ancestral character analyses, analyses
     of diversification and macroevolution, computing distances from DNA sequences, reading
