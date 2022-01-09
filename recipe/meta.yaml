@@ -1,4 +1,4 @@
-{% set version = "5.6" %}
+{% set version = "5.6-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ape_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ape/ape_{{ version }}.tar.gz
-  sha256: ce6f25e13c1ccfea1c81cc3fc4e5f15c90c416eb7b1dc2cffb670c280d21ad1c
+  sha256: 25401e036576eed1200e15bf68879ccd85611303a3508b989e15164cd4c0f7f7
 
 build:
   merge_build_host: true  # [win]
