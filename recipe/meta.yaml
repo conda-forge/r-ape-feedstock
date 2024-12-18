@@ -1,4 +1,4 @@
-{% set version = "5.8" %}
+{% set version = "5.8-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ape_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ape/ape_{{ version }}.tar.gz
-  sha256: 24ce729979e1bcc60317e71e5100ce54156ceb7484917b0d64260f733ae84d24
+  sha256: d6cde3dda751597ad741f634f143a3eb521b957fd1a23ceefba78a2716422d8e
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
